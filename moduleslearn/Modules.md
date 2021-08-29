@@ -1,3 +1,6 @@
+# Brief Intro to Modules in Python
+<br>
+<br>
 If you quit from the Python interpreter and enter it again,<br>
 the definitions you have made (functions and variables) are<br>
 lost. Therefore, if you want to write a somewhat longer program,<br>
@@ -20,13 +23,14 @@ level and in calculator mode).<br>
 A module is a file containing Python definitions and statements.<br>
 The file name is the module name with the suffix .py appended.<br>
 Within a module, the module’s name (as a string) is available as<br>
-the value of the global variable <code>__name__.</code> <br>
+the value of the global variable
+<blockquote><code>__name__</code></blockquote><br>
 <br>
 <br>
 A module can contain executable statements as well as function<br>
 definitions. These statements are intended to initialize the<br>
 module. They are executed only the first time the module name is<br>
-encountered in an import statement. [1] (They are also run if the<br>
+encountered in an import statement.(They are also run if the<br>
 file is executed as a script.)<br>
 <br>
 <br>
@@ -44,8 +48,11 @@ python fibo.py arguments
 </code></blockquote>
 
 the code in the module will be executed, just as if you imported it,<br>
-but with the __name__ set to "__main__". That means that by adding<br>
-this code at the end of your module:<br>
+but with the
+<blockquote>
+<code>__name__</code> set to <code>"__main__"</code>.<br>
+</blockquote>
+That means that by adding this code at the end of your module:<br>
 
 <blockquote><code>
 if __name__ == "__main__":
@@ -86,29 +93,29 @@ configurations to be better organized and accessible.<br>
 This means that scripts in that directory will be loaded instead<br>
 of modules of the same name in the library directory.<br>
 <blockquote>
-sound/                          Top-level package
-      __init__.py               Initialize the sound package
-      formats/                  Subpackage for file format conversions
-              __init__.py
-              wavread.py
-              wavwrite.py
-              aiffread.py
-              aiffwrite.py
-              auread.py
-              auwrite.py
-              ...
-      effects/                  Subpackage for sound effects
-              __init__.py
-              echo.py
-              surround.py
-              reverse.py
-              ...
-      filters/                  Subpackage for filters
-              __init__.py
-              equalizer.py
-              vocoder.py
-              karaoke.py
-              ...
+sound/                        Top-level package<br>
+      __init__.py             Initialize the sound package<br>
+      formats/                Subpackage for file format conversions<br>
+              __init__.py<br>
+              wavread.py<br>
+              wavwrite.py<br>
+              aiffread.py<br>
+              aiffwrite.py<br>
+              auread.py<br>
+              auwrite.py<br>
+              ...<br>
+      effects/                  Subpackage for sound effects<br>
+              __init__.py<br>
+              echo.py<br>
+              surround.py<br>
+              reverse.py<br>
+              ...<br>
+      filters/                  Subpackage for filters<br>
+              __init__.py<br>
+              equalizer.py<br>
+              vocoder.py<br>
+              karaoke.py<br>
+              ...<br>
 </blockquote>
 <br>
 <br>
@@ -124,6 +131,7 @@ with its full name.<br>
 sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
 </code>
 <br>
+<br>
 An alternative way of importing the submodule is:<br>
 <code>
 from sound.effects import echo
@@ -134,6 +142,7 @@ without its package prefix, so it can be used as follows:<br>
 <code>
 echo.echofilter(input, output, delay=0.7, atten=4)
 </code>
+<br>
 <br>
 Yet another variation is to import the desired function or<br>
 variable directly:<br>
@@ -146,6 +155,7 @@ function echofilter() directly available:<br>
 <code>
 echofilter(input, output, delay=0.7, atten=4)
 </code>
+<br>
 <br>
 Note that when using <code>from package import item</code>,<br>
 the item can be either a submodule (or subpackage) of the<br>
