@@ -1,4 +1,4 @@
-# LearningPython
+# LetsPython
 
 An interactive tutorial on learning Python closely following the Python docs, Python ver 3.9.4
 
